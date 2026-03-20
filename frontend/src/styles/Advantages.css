@@ -46,19 +46,6 @@
 }
   
 @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .hero-content h1 {
-      font-size: 36px;
-    }
-  
-    .hero-content p {
-      font-size: 16px;
-    }
-  
     .advantages-container {
       gap: 20px;
     }
