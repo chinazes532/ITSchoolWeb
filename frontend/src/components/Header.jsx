@@ -5,6 +5,7 @@ import "../styles/Header.css";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header className="header">
@@ -16,11 +17,11 @@ const Header = () => {
         </div>
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
-        <Link to="/news">Новости</Link>
-          <Link to="/schedule">Расписание</Link>
-          <Link to="/price">Стоимость</Link>
-          <Link to="/statement">Ведомость</Link>
-          <Link className="btn" to="/consultation">Консультация</Link>
+        <Link to="/news" onClick={closeMenu}>Новости</Link>
+          <Link to="/schedule" onClick={closeMenu}>Расписание</Link>
+          <Link to="/price" onClick={closeMenu}>Стоимость</Link>
+          <Link to="/statement" onClick={closeMenu}>Ведомость</Link>
+          <Link className="btn" to="/consultation" onClick={closeMenu}>Консультация</Link>
         </nav>
 
         <div

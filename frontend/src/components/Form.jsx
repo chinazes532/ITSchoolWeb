@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import "../styles/Form.css";
 
 function Form() {
   return (
@@ -17,7 +18,7 @@ function Form() {
 
             <div className="form-input">
                 <label >Ваш номер телефона: </label>
-                <input type="tel" placeholder='+79639709320' required/>
+                <input type="tel" placeholder='+79999999999' required/>
             </div>
 
             <div className="form-check-box">

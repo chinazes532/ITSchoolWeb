@@ -1,3 +1,5 @@
+import "../styles/Politika.css";
+
 function Politika() {
   return (
     <div className='politika'>
@@ -45,9 +47,9 @@ function Politika() {
 
     <h2>8. Контакты</h2>
     <p>Если у вас есть вопросы по данной Политике конфиденциальности, пожалуйста, свяжитесь с нами:</p>
-    <p><strong>Организация:</strong> [Ваше название компании]</p>
-    <p><strong>Электронная почта:</strong> [example@yourcompany.com]</p>
-    <p><strong>Телефон:</strong> [Ваш номер телефона]</p>
+    <p><strong>Организация:</strong> ООО "ITSchool"</p>
+    <p><strong>Электронная почта:</strong> itschool@mail.ru</p>
+    <p><strong>Телефон:</strong> +79639709320</p>
     </div>
   )
 }

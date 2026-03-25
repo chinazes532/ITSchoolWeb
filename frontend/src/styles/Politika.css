@@ -1,0 +1,65 @@
+.politika {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+  
+.politika h1 {
+    font-size: 36px;
+    margin-bottom: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+}
+  
+.politika h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #222;
+}
+  
+.politika p {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #444;
+}
+  
+.politika ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+  
+.politika li {
+    margin-bottom: 5px;
+}
+  
+.politika strong {
+    color: #111;
+}
+  
+.politika p:last-child {
+    margin-bottom: 0;
+}
+  
+@media (max-width: 768px) {    
+    .politika {
+      margin: 30px 10px;
+      padding: 20px 15px;
+    }
+  
+    .politika h1 {
+      font-size: 24px;
+    }
+  
+    .politika h2 {
+      font-size: 18px;
+    }
+  
+    .politika p,
+    .politika li {
+      font-size: 14px;
+    }
+}
