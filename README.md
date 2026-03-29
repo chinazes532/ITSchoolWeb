@@ -109,8 +109,8 @@ docker compose up -d --build
 <h2>🌐 Использование</h2>
 
 <ul>
-  <li>Фронтенд: <b>http://ВАШ_ID:3000</b></li>
-  <li>Backend API: <b>http://ВАШ_ID:8000/docs</b></li>
+  <li>Фронтенд: <b>http://ВАШ_IP:3000</b></li>
+  <li>Backend API: <b>http://ВАШ_IP:8000/docs</b></li>
 </ul>
 
 <hr>
