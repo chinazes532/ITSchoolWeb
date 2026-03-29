@@ -6,10 +6,13 @@ from starlette.middleware.cors import CORSMiddleware
 from backend.src.db.database import create_db
 from backend.src.api.users import user_router
 
+import sys
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print("App is enable")
+    print(sys.path)
     await create_db()
 
     yield
@@ -38,5 +41,6 @@ if __name__ == '__main__':
     uvicorn.run(
         app=app,
         host="0.0.0.0",
-        port=8000
+        port=8000,
+        factory=True
     )
