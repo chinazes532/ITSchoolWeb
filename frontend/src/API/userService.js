@@ -6,7 +6,7 @@ export default class UserService {
 
         try {
             const response = await axios.post(
-                "http://localhost:8000/users",
+                "http://72.56.233.162:8000/users",
                 params,
                 {withCredentials: true}
             )
