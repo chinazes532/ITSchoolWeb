@@ -96,6 +96,14 @@ DB_PORT=
 GMAIL_SENDER=
 GMAIL_PASSWORD=
 ADMIN_MAIL=
+
+FRONTEND_URL=
+</pre>
+
+<p>Создайте файл <b>.env</b> в папке <b>frontend</b>:</p>
+
+<pre>
+BASE_URL=
 </pre>
 
 <h3>3. Запуск проекта</h3>
