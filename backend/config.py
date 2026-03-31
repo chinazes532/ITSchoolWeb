@@ -25,9 +25,14 @@ class EmailConfig(CommonConfig):
     admin_mail: str = Field(..., alias="ADMIN_MAIL")
 
 
+class FrontendUrl(CommonConfig):
+    url: str = Field(..., alias="FRONTEND_URL")
+
+
 class Settings:
     database = DatabaseConfig()
     email = EmailConfig()
+    frontend = FrontendUrl()
 
 
 config = Settings()

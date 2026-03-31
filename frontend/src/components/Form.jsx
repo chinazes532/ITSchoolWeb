@@ -4,7 +4,7 @@ import "../styles/Form.css";
 import UserService from '../API/userService';
 
 function Form() {
-    const [user, setUser] = useState({full_name: "", phone: "", isChecked: false});
+    const [user, setUser] = useState({full_name: "", phone: "+79", isChecked: false});
 
     const newUser = async (e) => {
         e.preventDefault();
@@ -28,7 +28,7 @@ function Form() {
 
         const response = await UserService.register(user.full_name, user.phone);
 
-        setUser({full_name: "", phone: "", isChecked: false});
+        setUser({full_name: "", phone: "+79", isChecked: false});
 
         alert("Ваша заявка была успешно отправлена! Ожидайте обратной связи!");
 

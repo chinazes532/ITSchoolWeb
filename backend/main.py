@@ -6,13 +6,12 @@ from starlette.middleware.cors import CORSMiddleware
 from backend.src.db.database import create_db
 from backend.src.api.users import user_router
 
-import sys
+from backend.config import config
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print("App is enable")
-    print(sys.path)
     await create_db()
 
     yield
@@ -26,7 +25,7 @@ app.include_router(user_router)
 
 origins = [
     "http://localhost:3000",
-    "http://72.56.233.162:3000",
+    config.frontend.url,
 ]
 
 app.add_middleware(
