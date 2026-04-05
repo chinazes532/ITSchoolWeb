@@ -19,7 +19,7 @@ services:
       - redis_data:/data
 
   celery:
-    build: ./
+    build: ./backend
     command: celery -A backend.src.tasks.celery_worker worker --loglevel=info
     depends_on:
       - db
