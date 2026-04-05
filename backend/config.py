@@ -1,11 +1,18 @@
-from pydantic_settings import BaseSettings
+import os
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
 
 class CommonConfig(BaseSettings):
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
-        extra = "ignore"
+    model_config = SettingsConfigDict(
+        env_file=os.path.join(BASE_DIR, ".env"),
+        env_file_encoding='utf-8',
+        extra="ignore"
+    )
 
 
 class DatabaseConfig(CommonConfig):

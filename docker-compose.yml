@@ -18,6 +18,16 @@ services:
     volumes:
       - redis_data:/data
 
+  celery:
+    build: ./
+    command: celery -A backend.src.tasks.celery_worker worker --loglevel=info
+    depends_on:
+      - db
+      - redis
+    restart: always
+    env_file:
+      - .env
+
   backend:
     build:
       context: .
