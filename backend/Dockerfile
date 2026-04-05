@@ -20,3 +20,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 
 # CMD лучше оставить в docker-compose или прописать тут корректно
+CMD ["python3", "-m", "backend.main"]
