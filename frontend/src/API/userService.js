@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+require('dotenv').config();
 const apiUrl = process.env.BASE_URL; 
 
 export default class UserService {
