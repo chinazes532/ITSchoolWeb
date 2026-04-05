@@ -103,7 +103,7 @@ FRONTEND_URL=
 <p>Создайте файл <b>.env</b> в папке <b>frontend</b>:</p>
 
 <pre>
-BASE_URL=
+REACT_APP_BASE_URL=
 </pre>
 
 <h3>3. Запуск проекта</h3>
