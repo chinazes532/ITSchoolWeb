@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = import.meta.env.VITE_BASE_URL; 
+const apiUrl = process.env.BASE_URL; 
 
 export default class UserService {
     static async register(full_name, phone) {
@@ -8,7 +8,7 @@ export default class UserService {
 
         try {
             const response = await axios.post(
-                `http://72.56.244.152:8000/users`,
+                `${apiUrl}/users`,
                 params,
                 {withCredentials: true}
             )
