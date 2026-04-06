@@ -19,12 +19,6 @@ async def lifespan(app: FastAPI):
         decode_responses=True
     )
 
-    try:
-        await redis.ping()
-        print("✅ Redis connected successfully")
-    except Exception as e:
-        print(f"❌ Redis connection failed: {e}")
-
     await create_db()
 
     yield

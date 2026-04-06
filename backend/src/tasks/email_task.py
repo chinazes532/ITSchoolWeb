@@ -17,9 +17,7 @@ def send_admin_notification(full_name: str, phone: str):
     body = (f"<b>ФИО:</b> {full_name} <br>"
             f"<b>Номер телефона:</b> {phone} <br>")
 
-    loop = asyncio.get_event_loop()
-
-    return loop.run_until_complete(
+    return asyncio.run(
         email_service.send_email(
             subject=subject,
             body=body,
