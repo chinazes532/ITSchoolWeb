@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings
 from pydantic import Field
 
+
 class CommonConfig(BaseSettings):
     class Config:
         env_file = ".env"
@@ -19,15 +20,25 @@ class DatabaseConfig(CommonConfig):
         return f"postgresql+asyncpg://{self.db_user}:{self.db_password}@{self.db_host}:{self.db_port}/{self.db_name}"
 
 
+class RedisConfig(CommonConfig):
+    redis_url: str = Field(default="redis://redis:6379/0", alias="REDIS_URL")
+
+
 class EmailConfig(CommonConfig):
     gmail_sender: str = Field(..., alias="GMAIL_SENDER")
     gmail_password: str = Field(..., alias="GMAIL_PASSWORD")
     admin_mail: str = Field(..., alias="ADMIN_MAIL")
 
 
+class FrontendUrl(CommonConfig):
+    url: str = Field(..., alias="FRONTEND_URL")
+
+
 class Settings:
     database = DatabaseConfig()
     email = EmailConfig()
+    frontend = FrontendUrl()
+    redis = RedisConfig()
 
 
 config = Settings()

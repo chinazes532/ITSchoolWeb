@@ -1,6 +1,7 @@
 from backend.src.services.email import AbstractEmailService
 from backend.src.utils.repository import AbstractRepository
 from backend.src.schemas.users import UserAddSchemas
+from backend.src.tasks.email_task import send_admin_notification
 
 
 class UsersService:
@@ -16,10 +17,8 @@ class UsersService:
     async def create_new_user(self, creds: UserAddSchemas):
         user_dict = creds.model_dump()
         user_id = await self.user_repo.add_one(user_dict)
-        await self.email_service.send_email(
-            subject="Новая заявка на консультацию!",
-            body=f"<b>ФИО:</b> {creds.full_name} <br>"
-                 f"<b>Номер телефона:</b> {creds.phone[4:]} <br>",
-            to=self.admin_email,
+        send_admin_notification.delay(
+            full_name=creds.full_name,
+            phone=creds.phone[4:]
         )
         return user_id
